@@ -52,6 +52,7 @@ namespace UI
         {
             float rayLength = 250f;
             RaycastHit2D hit = Physics2D.Raycast(source.position, rayDirection, rayLength, targetMask);
+            Debug.DrawRay(source.position, rayDirection * rayLength);
             float hitDistance = hit.collider != null ? hit.distance : rayLength;
             UpdateColor(hitDistance / rayLength);
         }
